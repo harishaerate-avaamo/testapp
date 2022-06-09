@@ -23,6 +23,6 @@ app.post("/api/sample", (req, res) => {
   });
 
 
-  app.listen(PORT, () => {
+  app.listen(PORT|| 3000, () => {
     console.log(`Server listening to port ${PORT} at ${moment()}`);
   });
