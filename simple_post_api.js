@@ -22,6 +22,10 @@ app.post("/api/sample", (req, res) => {
     res.send({Status:"ok"});   
   });
 
+app.get("/", (req, res) => {
+    res.send({Status:"ok"});   
+  });
+
 
   app.listen(PORT|| 3000, () => {
     console.log(`Server listening to port ${PORT} at ${moment()}`);
