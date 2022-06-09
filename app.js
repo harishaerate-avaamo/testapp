@@ -1,32 +1,27 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const bodyParser = require("body-parser");
-const PORT = 3000;
-const moment = require('moment')
-// const ngrok = require('ngrok');
-app.use(express.json());
-
-app.use(bodyParser.json());
-
-
-
-// (async function() {
-//   const url = await ngrok.connect();
-// })();
-
-
-
-
-app.post("/api/sample", (req, res) => {
-    console.log(req.body);
-    res.send({Status:"ok"});   
-  });
-
-app.get("/", (req, res) => {
-    res.send({Status:"ok"});   
-  });
-
-
-  app.listen(PORT|| 3000, () => {
-    console.log(`Server listening to port ${PORT} at ${moment()}`);
-  });
+ 
+// Getting Request
+app.get('/', (req, res) => {
+ 
+    // Sending the response
+    res.send('Hello World!')
+    
+    // Ending the response
+    res.end()
+})
+ 
+app.post('/api/sample', (req, res) => {
+ 
+    // Sending the response
+    res.send({Status:"ok"})
+    
+    // Ending the response
+    res.end()
+})
+// Establishing the port
+const PORT = process.env.PORT ||5000;
+ 
+// Executing the server on given port number
+app.listen(PORT, console.log(
+  `Server started on port ${PORT}`));
